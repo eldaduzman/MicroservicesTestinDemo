@@ -1,0 +1,76 @@
+{
+	"data": {
+		"pairs": [
+
+			{
+				"request": {
+					"path": [
+						{
+							"matcher": "regex",
+							"value": "/all/activities/*"
+						}
+					],
+					"method": [
+						{
+							"matcher": "exact",
+							"value": "GET"
+						}
+					],
+					"destination": [
+						{
+							"matcher": "regex",
+							"value": "localhost:5002|service-pets:8080"
+						}
+					],
+					"scheme": [
+						{
+							"matcher": "exact",
+							"value": "http"
+						}
+					],
+					"body": [
+						{
+							"matcher": "exact",
+							"value": ""
+						}
+					]
+				},
+				"response": {
+					"status": 200,
+					"body": "{\n  \"activity_times\": [\n    {\n      \"activity_time\": 76, \n      \"dog_id\": \"9cbd10fe-3ba1-11ea-a347-0242ac130003\"\n    }, \n    {\n      \"activity_time\": 95, \n      \"dog_id\": \"9cbd12ac-3ba1-11ea-a347-0242ac130003\"\n    }, \n    {\n      \"activity_time\": 23, \n      \"dog_id\": \"9cbd1388-3ba1-11ea-a347-0242ac130003\"\n    }, \n    {\n      \"activity_time\": 148, \n      \"dog_id\": \"9cbd1446-3ba1-11ea-a347-0242ac130003\"\n    }, \n    {\n      \"activity_time\": 7, \n      \"dog_id\": \"9cbd14fa-3ba1-11ea-a347-0242ac130003\"\n    }\n  ]\n}\n",
+					"encodedBody": false,
+					"headers": {
+						"Access-Control-Allow-Origin": [
+							"*"
+						],
+						"Content-Length": [
+							"513"
+						],
+						"Content-Type": [
+							"application/json"
+						],
+						"Date": [
+							"Mon, 20 Jan 2020 16:26:29 GMT"
+						],
+						"Hoverfly": [
+							"Was-Here"
+						],
+						"Server": [
+							"Werkzeug/0.16.0 Python/3.6.6"
+						]
+					},
+					"templated": true
+				}
+			}
+		],
+		"globalActions": {
+			"delays": [],
+			"delaysLogNormal": []
+		}
+	},
+	"meta": {
+		"schemaVersion": "v5",
+		"hoverflyVersion": "v1.1.3",
+		"timeExported": "2020-01-20T18:38:56+02:00"
+	}
+}

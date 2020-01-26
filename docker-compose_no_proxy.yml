@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  service-users:
+    build: ./Users
+    volumes:
+      - ./Users:/usr/src/app
+    ports:
+      - 5001:80
+  service-pets:
+    build: ./Pets
+    volumes:
+      - ./Pets:/usr/src/app
+    ports:
+      - 5002:8080

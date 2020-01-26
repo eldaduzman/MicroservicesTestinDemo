@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20200121 17:03:26.580" rpa="false">
+<suite id="s1" name="Pets-Api-Tests &amp; User-Api-Tests">
+<suite id="s1-s1" name="Pets-Api-Tests" source="C:\ANIMO-wannabe\tests\api\Pets-Api-Tests.robot">
+<test id="s1-s1-t1" name="Test Get Activity Times">
+<kw name="Get" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>endpoint=/all/activities/19</arg>
+</arguments>
+<status status="PASS" starttime="20200121 17:03:28.022" endtime="20200121 17:03:28.330"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response body</arg>
+</arguments>
+<msg timestamp="20200121 17:03:28.331" level="INFO">
+{
+    "activity_times": [
+        {
+            "activity_time": 54,
+            "dog_id": "2e0cb934-3c5f-11ea-b956-0242ac130003"
+        },
+        {
+            "activity_time": null,
+            "dog_id": "2e0cbaba-3c5f-11ea-b956-0242ac130003"
+        }
+    ]
+}</msg>
+<status status="PASS" starttime="20200121 17:03:28.331" endtime="20200121 17:03:28.350"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20200121 17:03:28.351" endtime="20200121 17:03:28.352"></status>
+</kw>
+<kw name="Array" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON array.*</doc>
+<arguments>
+<arg>response body activity_times</arg>
+</arguments>
+<status status="PASS" starttime="20200121 17:03:28.352" endtime="20200121 17:03:28.353"></status>
+</kw>
+<kw name="String" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON string.*</doc>
+<arguments>
+<arg>$.activity_times.[*].dog_id</arg>
+</arguments>
+<status status="PASS" starttime="20200121 17:03:28.354" endtime="20200121 17:03:28.394"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>$.activity_times.[*].activity_time</arg>
+</arguments>
+<msg timestamp="20200121 17:03:28.434" level="FAIL">None is not of type 'integer'
+
+Failed validating 'type' in schema:
+    {'examples': [None], 'type': 'integer'}
+
+On instance:
+    None</msg>
+<status status="FAIL" starttime="20200121 17:03:28.395" endtime="20200121 17:03:28.435"></status>
+</kw>
+<status status="FAIL" starttime="20200121 17:03:28.022" endtime="20200121 17:03:28.435" critical="yes">None is not of type 'integer'
+
+Failed validating 'type' in schema:
+    {'examples': [None], 'type': 'integer'}
+
+On instance:
+    None</status>
+</test>
+<status status="FAIL" starttime="20200121 17:03:26.616" endtime="20200121 17:03:28.437"></status>
+</suite>
+<suite id="s1-s2" name="User-Api-Tests" source="C:\ANIMO-wannabe\tests\api\User-Api-Tests.robot">
+<test id="s1-s2-t1" name="Test Get Average Activity Time">
+<kw name="Get" library="REST">
+<tags>
+<tag>http</tag>
+</tags>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<arguments>
+<arg>endpoint=/activity/time/average/12</arg>
+</arguments>
+<status status="PASS" starttime="20200121 17:03:28.449" endtime="20200121 17:03:28.463"></status>
+</kw>
+<kw name="Output" library="REST">
+<tags>
+<tag>I/O</tag>
+</tags>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<arguments>
+<arg>response body</arg>
+</arguments>
+<msg timestamp="20200121 17:03:28.463" level="INFO">
+{
+    "avg_time": 69.8
+}</msg>
+<status status="PASS" starttime="20200121 17:03:28.463" endtime="20200121 17:03:28.464"></status>
+</kw>
+<kw name="Integer" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON integer.*</doc>
+<arguments>
+<arg>response status</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20200121 17:03:28.464" endtime="20200121 17:03:28.465"></status>
+</kw>
+<kw name="Number" library="REST">
+<tags>
+<tag>assertions</tag>
+</tags>
+<doc>*Asserts the field as JSON number.*</doc>
+<arguments>
+<arg>response body avg_time</arg>
+</arguments>
+<status status="PASS" starttime="20200121 17:03:28.465" endtime="20200121 17:03:28.466"></status>
+</kw>
+<status status="PASS" starttime="20200121 17:03:28.448" endtime="20200121 17:03:28.466" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200121 17:03:28.439" endtime="20200121 17:03:28.468"></status>
+</suite>
+<status status="FAIL" starttime="20200121 17:03:26.583" endtime="20200121 17:03:28.470"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1">Critical Tests</stat>
+<stat pass="1" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" id="s1" name="Pets-Api-Tests &amp; User-Api-Tests">Pets-Api-Tests &amp; User-Api-Tests</stat>
+<stat pass="0" fail="1" id="s1-s1" name="Pets-Api-Tests">Pets-Api-Tests &amp; User-Api-Tests.Pets-Api-Tests</stat>
+<stat pass="1" fail="0" id="s1-s2" name="User-Api-Tests">Pets-Api-Tests &amp; User-Api-Tests.User-Api-Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
